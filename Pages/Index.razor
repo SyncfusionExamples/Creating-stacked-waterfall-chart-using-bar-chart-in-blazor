@@ -1,0 +1,42 @@
+﻿@page "/"
+
+<SfChart>
+    <ChartPrimaryXAxis ValueType="Syncfusion.Blazor.Charts.ValueType.Category">
+        <ChartAxisMajorGridLines Width="0"></ChartAxisMajorGridLines>
+        <ChartAxisMajorTickLines Width="0"></ChartAxisMajorTickLines>
+    </ChartPrimaryXAxis>
+    <ChartPrimaryYAxis>
+        <ChartAxisMajorTickLines Width="0"></ChartAxisMajorTickLines>
+        <ChartAxisMajorGridLines Width="0"></ChartAxisMajorGridLines>
+    </ChartPrimaryYAxis>
+    <ChartSeriesCollection>
+        <ChartSeries DataSource="@MedalDetails" XName="X" YName="baseline" Type="ChartSeriesType.StackingBar" Fill="#FFFFFF">
+        </ChartSeries>
+        <ChartSeries DataSource="@MedalDetails" XName="X" YName="y1" Type="ChartSeriesType.StackingBar" Fill="#fa4a00">
+        </ChartSeries>
+        <ChartSeries DataSource="@MedalDetails" XName="X" YName="y2" Type="ChartSeriesType.StackingBar" Fill="#000095">
+        </ChartSeries>
+    </ChartSeriesCollection>
+</SfChart>
+
+@code {
+
+    public class ChartData
+    {
+        public string X { get; set; }
+        public double baseline { get; set; }
+        public double y1 { get; set; }
+        public double y2 { get; set; }
+    }
+    public List<ChartData> MedalDetails = new List<ChartData>
+    {
+        new ChartData { baseline= 0,X= "Total",y1=190, y2=12},
+        new ChartData { baseline= 180,X= "Otros",y1=11, y2=10},
+        new ChartData { baseline= 180,X= "Expert Monitoring",y1=31, y2=0},
+        new ChartData { baseline= 195,X= "Liquidacion Nacional",y1=16, y2=0},
+        new ChartData { baseline= 178,X= "Autorizacion Nacional",y1=17, y2=0},
+        new ChartData { baseline= 155,X= "Cuentas & Tarjetas",y1=23, y2=0},
+        new ChartData { baseline= 116,X= "Decision Intelligence",y1=39, y2=0},
+        new ChartData { baseline= 0,X= "Ventas",y1=100, y2=16},
+    };
+}
