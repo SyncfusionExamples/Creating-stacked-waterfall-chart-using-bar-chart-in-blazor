@@ -49,10 +49,6 @@ dotnet run
 
 4. Open the local application URL displayed in the application output.
 
-## Project Structure
-
-- `Pages/Index.razor` — contains the `SfChart`, stacked bar series configuration, axis definitions, and waterfall-style implementation.
-
 ## Support and Feedback
 
 - For general product questions, visit the [Syncfusion Community Forum](https://www.syncfusion.com/forums) or [Syncfusion Support](https://www.syncfusion.com/support).
